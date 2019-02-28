@@ -1,0 +1,22 @@
+
+
+<div class="container text-center well">
+  <br>
+<hr>
+  <h3>Connexion en tant qu' Admininistrateur</h3>
+
+
+  <hr>
+
+<div class="text-center">
+  <%= form_tag(auth_path, method: "post") do %>
+  <%= label_tag(:q, "Mot de Passe :") %>
+  
+  <%= password_field_tag(:password) %>
+  <%= submit_tag("Connexion", class:"btn btn-wanring") %>
+  <% end %>
+</div>
+
+<br>
+<br>
+</div>

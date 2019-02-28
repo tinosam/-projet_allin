@@ -1,0 +1,52 @@
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="well">
+      <h3>Modifier votre profile</h3>
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.label :avatar %>
+          <br>
+          <%= render 'shared/avatar', user: @user %>
+          <br>
+          <br>
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Photo_de_Couverture %>
+          <br>
+          <%= render 'shared/cover', user: @user %>
+          <br>
+          <%= f.file_field :cover %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Nom_Complet %>
+          <%= f.text_field :name, placeholder: 'Nom Complet', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :A_Propos_de_vous %>
+          <%= f.text_area :about, placeholder: 'Votre poste, etc ....', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :location %>
+          <%= f.text_field :location, placeholder: 'Location', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :contact_rapide %>
+          <%= f.text_field :phone_number, placeholder: '+26134 00 000 000 ', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Date_de_naissance %>
+          <%= f.text_field :dob, placeholder: 'Date de Naissance', class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :sex %><br>
+          <%= f.select :sex, options_for_seasons, class: 'form-control', prompt: 'Select One' %>
+        </div>
+        <div class="actions">
+          <%= submit_tag 'Mise à Jour', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

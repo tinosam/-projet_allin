@@ -1,0 +1,6 @@
+
+<% if user %>
+  <%= link_to user_path(user) do %>
+    <%= image_tag user.avatar.url || 'avatar.jpg', class: 'avatar' , style: 'border-radius: 50%;' %>
+  <% end %>
+<% end %>

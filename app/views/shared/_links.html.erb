@@ -1,0 +1,34 @@
+<div id="links" class="well">
+  <h5>
+    <%= fa_icon 'newspaper-o' %>
+    <%= link_to 'Actualité', root_path %>
+  </h5>
+  <!-- <h5>
+    <%= fa_icon 'calendar-week' %>
+    <%= link_to 'Projet', new_event_path %>
+  </h5> -->
+  <h5>
+    <%= fa_icon 'calendar-check' %>
+    <%= link_to 'Voir les projets', calendar_events_path %>
+  </h5>
+  <!-- <h5>
+    <%= fa_icon 'user-friends' %>
+    <%= link_to 'Collègue', friends_user_path(current_user) %>
+  </h5>
+  <h5>
+    <%= fa_icon 'arrow-circle-left' %>
+    <%= link_to 'Followers', followers_user_path(current_user) %>
+  </h5>
+  <h5>
+    <%= fa_icon 'search' %>
+    <%= link_to('Trouver Collègue', find_friends_path)%>
+  </h5> -->
+  <h5>
+    <%= fa_icon 'pencil-alt' %>
+    <%= link_to 'Modifier Profile', edit_user_path(current_user) %>
+  </h5>
+  <h5>
+    <%= fa_icon 'lock' %>
+    <%= link_to 'Modifier Mot de Passe', edit_user_registration_path %>
+  </h5>
+</div>

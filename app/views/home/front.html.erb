@@ -1,0 +1,27 @@
+<div class="profile-background">
+  <div class="filter-black"></div>
+</div>
+
+<br>
+
+
+<div class="container">
+  <div class="row profile-content section-nude">
+    <div class="col-lg-3"></div>
+    <div id="newsfeed" class="col-lg-6 ">
+      <h4> <i class="fa fa-newspaper-o"></i> &nbsp; Actualité</h4>
+      <div id="activities">
+        <% if @activities.empty? %>
+        <div class="well">
+          <%= render('shared/no_resource', resources: 'Activities') %>
+        </div>
+        <% else %>
+        <%= render_activities(@activities, layout: '/shared/activity') %>
+        <% end %>
+      </div>
+      <%= render 'shared/paginate', resources: @activities %>
+    </div>
+    <div class="col-lg-3"></div>
+    
+  </div>
+</div>

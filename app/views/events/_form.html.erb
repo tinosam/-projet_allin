@@ -1,0 +1,13 @@
+<%= form_for(@event) do |f| %>
+  <div class="form-group">
+    <%= f.label :Votre_Projets %>
+    <%= f.text_field :name, autofocus: true, placeholder: 'A propos de votre projets', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Quand? %>
+    <%= f.text_field :event_datetime, placeholder: '12.12.2019 ? ', class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit (@event.persisted? ? :update : :Crée), class: 'btn btn-default' %>
+  </div>
+<% end %>

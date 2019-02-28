@@ -1,0 +1,47 @@
+
+<% if post.user && post.confirmed == 1%>
+<div class="info">
+  <%= render 'shared/avatar', user: post.user %>
+  <h4 class="name">
+    <%= link_to post.user.name, user_path(post.user) %>
+  </h4>
+  <span class="action">a crée un
+    <%= link_to 'post', post %></span>
+</div>
+<div class="content">
+  <span class="text">
+    <%= post.content_html %></span>
+  <% if post.attachment.present? %>
+  <div class="attachment">
+    <%= image_tag post.attachment.url %>
+  </div>
+  <% end %>
+  <%= render 'shared/created_at', activity: post %>
+  <div class="points">
+    <span class="like-count">
+      <%= pluralize(post.cached_votes_up, 'like') %>
+    </span>
+
+
+    <span class="comments-count">
+      <%= pluralize(post.comments_count, 'comment') %>
+    </span>
+    <span class="comments-count">
+      <%= PostView.where(post: post).count %> vue(s)
+    </span>
+
+
+    
+      <% if belongs_to_user?(post) %>
+      <%= link_to edit_post_path(post), class: 'btn btn-primary ' do %>
+      <% fa_icon 'pencil-alt' %>
+      <% end %>
+      <%= link_to post_path(post), method: :delete, class:'btn btn-danger ', remote: remote do %>
+      <% fa_icon 'trash' %>
+      <% end %>
+      <% end %>
+    
+  </div>
+</div>
+<%= render 'shared/actions', resource: post %>
+<% end %>
